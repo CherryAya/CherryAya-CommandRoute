@@ -25,10 +25,10 @@ namespace CherryAya_CommandRoute
         #region 路由方法
 
         /// <summary>
-        /// 路由分发执行
+        /// 路由分发方法
         /// </summary>
         /// <param name="MessageSegment">消息段</param>
-        /// <returns>路由结果</returns>
+        /// <returns>分发执行结果</returns>
         public bool Execute(string MessageSegment)
         {
             // 过滤

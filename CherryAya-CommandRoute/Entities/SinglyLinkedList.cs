@@ -3,7 +3,7 @@
     /// <summary>
     /// 单链表的定义
     /// </summary>
-    public class SinglyLinkedList
+    internal class SinglyLinkedList
     {
         /// <summary>
         ///  值

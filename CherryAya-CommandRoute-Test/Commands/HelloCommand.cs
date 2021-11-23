@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using CherryAya_CommandRoute.Entities;
+﻿using CherryAya_CommandRoute.Entities;
 
 namespace CherryAya_CommandRoute_Test.Commands
 {
