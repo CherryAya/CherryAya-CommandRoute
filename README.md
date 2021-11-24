@@ -105,6 +105,6 @@ using CherryAya_CommandRoute;
 CommandRoute route = new();
 route.Register(new TestCommand());
 
-route.Execute("/test hello");           // 执行到 TestCommandStructure.Handle()
+route.Execute("/test hello");        // 执行到 TestCommandStructure.Handle()
 route.Execute("/test optionA");      // 执行到 TestCommandStructure.Options[0].Handle()
 ````
