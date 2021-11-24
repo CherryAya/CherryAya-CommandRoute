@@ -74,11 +74,27 @@ public class TestCommandStructure : ICommandStructure
         public string Key { get; set; } = "test";
         public bool hasValue { get; set; } = true;
         public object? Value { get; set; } = null;
-        public List<ICommandStructure>? Options { get; set; } = null;
+        public List<ICommandStructure>? Options { get; set; } = new List<ICommandStructure>()
+        {
+                new OptionA()
+        };
 
         public void Handle()
         {
                 Console.WriteLine(Value.ToString());
+        }
+}
+
+public class OptionA : ICommandStructure
+{
+        public string Key { get; set; } = "optionA";
+        public bool hasValue { get; set; } = false;
+        public object? Value { get; set; } = null;
+        public List<ICommandStructure>? Options { get; set; } = null;
+
+        public void Handle()
+        {
+                Console.WriteLine("location: Test>OptionA");
         }
 }
 ````
@@ -88,5 +104,7 @@ using CherryAya_CommandRoute;
 
 CommandRoute route = new();
 route.Register(new TestCommand());
-route.Execute("/test hello");
+
+route.Execute("/test hello");           // 执行到 TestCommandStructure.Handle()
+route.Execute("/test optionA");      // 执行到 TestCommandStructure.Options[0].Handle()
 ````
