@@ -69,7 +69,7 @@ namespace CherryAya_CommandRoute
                         if (!flag) // 无匹配结果
                         {
                             if (Cmd.hasValue is true) // 如果当前节点接受值
-                                Cmd.Value = Node.next;
+                                Cmd.Value = Node.next.val;
                             else
                                 Cmd.Value = null;
                             break;
@@ -121,10 +121,11 @@ namespace CherryAya_CommandRoute
         {
             if (!this.configuration.IsCaseSensitive)
             {
-                node.val = node.val.ToLower();
+                var temp = node.val.ToLower();
                 key = key.ToLower();
+                return Equals(temp, key);
             }
-            return Equals(node.val, key);
+            else return Equals(node.val, key);
         }
 
         #endregion
