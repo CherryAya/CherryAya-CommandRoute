@@ -24,6 +24,14 @@ route.Execute("/options optionB optionA 套娃");
 // Option/Value缺失
 route.Execute("/options optionA");
 
+// 查询/注销指令
+Console.WriteLine(route.Contains(new HelloCommand()));
+route.Deregister(new HelloCommand());
+route.Execute("/Hello");
+
+// Route ToString方法
+Console.WriteLine(route.ToString());
+
 public class RouteConfiguration : IRouteConfiguration
 {
     public string[] CommandPrefix { get; set; } = new string[] { "/", "#" };

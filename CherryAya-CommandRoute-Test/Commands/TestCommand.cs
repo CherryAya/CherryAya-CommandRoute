@@ -18,7 +18,7 @@ namespace CherryAya_CommandRoute_Test.Commands
 
         public void Handle()
         {
-            Console.WriteLine(Value.ToString());
+            Console.WriteLine(Value);
         }
     }
 }
