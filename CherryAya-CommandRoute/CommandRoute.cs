@@ -229,10 +229,7 @@ namespace CherryAya_CommandRoute
         /// <summary>
         /// 清空当前指令组
         /// </summary>
-        public void Clear()
-        {
-            this.commands.Clear();
-        }
+        public void Clear() => this.commands.Clear();
 
         #endregion
 
@@ -271,6 +268,8 @@ namespace CherryAya_CommandRoute
             builder.Append('{');
             builder.Append($"\"class\":\"{this.GetType().Name}\",");
             builder.Append($"\"commands\":[");
+            if (this.commands.Count == 0)
+                return builder.Append("]}").ToString();
             builder.Append('{');
             builder.Append($"\"item\":{0},\"class\":\"{this.commands[0].GetType().Name}\",\"name\":\"{this.commands[0].Name}\"");
             builder.Append('}');

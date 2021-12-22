@@ -32,6 +32,11 @@ route.Execute("/Hello");
 // Route ToString方法
 Console.WriteLine(route.ToString());
 
+// 清空
+route.Clear();
+route.Execute("/Hello");
+Console.WriteLine(route.ToString());
+
 public class RouteConfiguration : IRouteConfiguration
 {
     public string[] CommandPrefix { get; set; } = new string[] { "/", "#" };
